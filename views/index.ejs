@@ -1,0 +1,52 @@
+<html>
+<head>
+  <title>Neo4j-Temp-DB Demo</title>
+  <style>
+    body {
+      max-width: 100vw;
+      word-break: break-word;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    label span {
+      display: inline-block;
+      width: 100px;
+    }
+
+    input, textarea {
+      width: 450px;
+      vertical-align: top;
+    }
+
+    button {
+      margin-left: 105px;
+    }
+  </style>
+</head>
+<body>
+  <form method="post" action="/">
+    <label>
+      <span>Temp DB</span>
+      <input type="text" name="tempDbName" value="<%=tempDbName %>" readonly />
+    </label>
+
+    <label>
+      <span>Cypher</span>
+      <textarea name="cypher" rows="10"></textarea>
+    </label>
+
+    <button type="submit">Run</button>
+  </form>
+
+  <h3>Queries:</h3>
+
+  <% for(const query of queries) { %>
+    <p><%=JSON.stringify(query.result) %></p>
+  <% } %>
+</body>
+</html>
