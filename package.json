@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --watch ./ --ext js --exec babel-node  index.js",
+    "clean-expired-dbs": "babel-node ./clean-expired-dbs.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Alisson Patricio <eu@alisson.net>",
